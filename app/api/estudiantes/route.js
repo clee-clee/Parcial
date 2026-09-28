@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { getEstudiantes, addEstudiante } from "../../../lib/db";
 
-// GET /api/estudiantes -> lista todos los estudiantes
+
 export async function GET() {
   return NextResponse.json(getEstudiantes());
 }
 
-// POST /api/estudiantes -> crea un nuevo estudiante
 export async function POST(request) {
   const body = await request.json();
   const { nombres, apellidos, fechaNacimiento, sexo, carnet } = body;
